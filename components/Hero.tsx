@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import cutout from '@/lib/assets/cutout.png'
+import cutout from '../public/cutout.png'
 
 function Hero() {
     // const scrollToProjects = () => {
