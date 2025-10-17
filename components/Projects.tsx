@@ -23,7 +23,7 @@ const projects: Project[] = [
     image: "/digitutor.png",
     techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase"],
     githubUrl: "https://github.com/tarekfb/mindic",
-    liveUrl: "digitutor.se",
+    liveUrl: "https://digitutor.se",
   },
   {
     title: "Weekly positive news",
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     title: "Yakiita hantverk",
     description: "Portfolio for carpenter business.",
-    image: "/placeholder.svg",
+    image: "/yakiita-hantverk.png",
     techStack: ["sveltejs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/yakiita-hantverk",
     liveUrl: "https://yakiita-hantverk.vercel.app/",
@@ -54,70 +54,71 @@ function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="flex flex-col overflow-hidden bg-card border-border hover:shadow-xl hover:scale-110 transition-transform"
-            >
-              <div className="relative w-full h-48 bg-muted">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={100}
-                  height={50}
-                  className="w-full h-full"
-                />
-              </div>
-
-              <div className="p-6 pb-4 grow flex flex-col justify-between ">
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm">
-                    {project.description}
-                  </p>
+          
+              <Card
+                key={index}
+                className="flex flex-col overflow-hidden bg-card border-border hover:shadow-xl transition-shadow"
+              >
+                <div className="relative w-full h-48 bg-muted">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={100}
+                    height={50}
+                    className="w-full h-full"
+                  />
                 </div>
 
-                <div className="flex justify-between gap-x-2">
-                  <div className="flex items-center">
-                    {project.techStack.map((tech, i) => (
-                      i <= 5 && (
-                        <TechStackIcon key={tech} tech={tech} />
-                      )
-                    ))}
+                <div className="p-6 pb-4 grow flex flex-col justify-between ">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-card-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      {project.description}
+                    </p>
                   </div>
 
-                  <div className="flex justify-end gap-1.5">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      asChild
-                    >
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                  <div className="flex justify-between gap-x-2">
+                    <div className="flex items-center">
+                      {project.techStack.map((tech, i) => (
+                        i <= 5 && (
+                          <TechStackIcon key={tech} tech={tech} />
+                        )
+                      ))}
+                    </div>
+
+                    <div className="flex justify-end gap-1.5">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        asChild
                       >
-                        <Github className="size-6" />
-                      </a>
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      asChild
-                    >
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="size-6" />
+                        </a>
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        asChild
                       >
-                        <ExternalLink className="size-6" />
-                      </a>
-                    </Button>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="size-6" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
           ))}
         </div>
       </div>

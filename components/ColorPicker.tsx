@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 
 const colors = [
@@ -27,7 +28,7 @@ const ColorPicker = () => {
 
   return (
  
-      <div className=" p-3">
+      <div className="p-3">
         <div className="flex gap-x-2 md:gap-4">
           {colors.map((color) => (
             <button
