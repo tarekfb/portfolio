@@ -63,8 +63,8 @@ function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={100}
-                    height={50}
+                    width={1400}
+                    height={750}
                     className="w-full h-full"
                   />
                 </div>
