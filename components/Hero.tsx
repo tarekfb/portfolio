@@ -17,7 +17,7 @@ function Hero() {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl">
-                        I'm a frontend-focused full stack developer. Reach out if you have any questions or just want to chat!
+                        {"I'm a frontend-focused full stack developer. Reach out if you have any questions or just want to chat!”}
                     </p>
 
                     <ScrollToProjectsButton targetId="projects">
