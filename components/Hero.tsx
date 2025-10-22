@@ -4,7 +4,7 @@ import ScrollToProjectsButton from "./ui/ScrollToProjectsButton";
 
 function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col items-center pt-10 md:pt-0 bg-gradient-to-b from-foreground to-accent">
+        <section className="relative min-h-[90vh] flex flex-col items-center pt-10 md:pt-0 bg-gradient-to-b from-foreground to-accent">
             <div className="absolute bottom-20 md:bottom-25 right-0 md:right-0 z-0">
                 <Image src={cutout} alt="profile photo" width={401} height={422} className="w-[300px] md:w-[350px] lg:w-[450px]" />
             </div>
