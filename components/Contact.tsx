@@ -19,7 +19,7 @@ function Contact() {
             </p>
 
             <div className="flex justify-center gap-4 flex-wrap">
-              <Button size="lg" asChild className="gap-2">
+              <Button size="lg" variant="accent" asChild className="gap-2">
                 <a href="mailto:tarek@digitutor.se">
                   <Mail className="size-5" />
                   Email Me
