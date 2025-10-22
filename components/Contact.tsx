@@ -19,12 +19,6 @@ function Contact() {
             </p>
 
             <div className="flex justify-center gap-4 flex-wrap">
-              <Button size="lg" variant="accent" asChild className="gap-2">
-                <a href="mailto:tarek@digitutor.se">
-                  <Mail className="size-5" />
-                  Email Me
-                </a>
-              </Button>
               <Button size="lg" variant="outline" asChild>
                 <a
                   href="https://github.com/tarekfb"
@@ -45,6 +39,12 @@ function Contact() {
                 >
                   <Linkedin className="size-5" />
                   LinkedIn
+                </a>
+              </Button>
+              <Button size="lg" variant="accent" asChild className="gap-2">
+                <a href="mailto:tarek@digitutor.se">
+                  <Mail className="size-5" />
+                  Email Me
                 </a>
               </Button>
             </div>
