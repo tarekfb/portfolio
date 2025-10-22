@@ -19,7 +19,7 @@ function ScrollToProjectsButton({
   };
 
   return (
-    <Button size="lg" variant="accent" onClick={scrollToProjects}>
+    <Button size="xl" variant="accent" onClick={scrollToProjects}>
       {children}
     </Button>
   );

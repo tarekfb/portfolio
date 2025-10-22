@@ -38,7 +38,7 @@ function ColorPicker() {
           <button
             key={color.name}
             onClick={() => applyColor(color)}
-            className={`size-6 md:size-8 rounded-full hover:scale-110 transition-transform hover:cursor-pointer ${selectedColor.name === color.name && 'border-2 border-solid border-background scale-75'}`}
+            className={`size-6 md:size-8 rounded-full hover:scale-110 transition-transform hover:cursor-pointer ${selectedColor.name === color.name && 'border-2 border-solid border-background dark:border-foreground scale-75'}`}
             style={{
               backgroundColor: color.oklchCss,
             }}
