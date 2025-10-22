@@ -39,11 +39,11 @@ export default function DarkModeToggle() {
         <Button
             variant="ghost"
             size="icon"
-            className="text-background transition duration-300"
+            className="text-background dark:text-foreground transition duration-300"
             onClick={toggleDarkMode}
         >
             <motion.div  >
-                {isDark ? <Sun /> : <Moon />}
+                {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
             </motion.div>
         </Button>
     )
