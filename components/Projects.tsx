@@ -40,6 +40,13 @@ const projects: Project[] = [
     techStack: ["sveltejs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/yakiita-hantverk",
     liveUrl: "https://yakiita-hantverk.vercel.app/",
+  },  {
+    title: "Pre-launch sign-up",
+    description: "A marketing page to find users before launch.",
+    image: "/preregister.png",
+    techStack: ["sveltejs", "typescript", "tailwindcss"],
+    githubUrl: "https://github.com/tarekfb/preregister",
+    liveUrl: "https://preregister-6uk.pages.dev/",
   },
 ];
 
@@ -57,7 +64,7 @@ function Projects() {
           
               <Card
                 key={index}
-                className="flex flex-col overflow-hidden bg-card border-border hover:shadow-xl transition-shadow"
+                className="flex flex-col overflow-hidden bg-card border-accent/50 hover:shadow-xl transition-shadow"
               >
                 <div className="relative w-full h-48 bg-muted">
                   <Image
