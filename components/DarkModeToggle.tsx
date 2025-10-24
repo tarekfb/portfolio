@@ -41,7 +41,6 @@ export default function DarkModeToggle() {
     const toggleDarkMode = useCallback(() => {
         setIsDark((prevValue) => !prevValue);
         toggleThemeClasses();
-        alert("hej")
     }, [setIsDark, toggleThemeClasses])
 
     return (
