@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import TechStackIcon from "./TechStackIcon";
 import Image from "next/image";
 
-const tech = ["nextjs", "sveltejs", "css", "html", "javascript", "reactjs", "supabase", "typescript", "nodejs", "postgresql", "tailwindcss"] as const
-export type Tech = typeof tech[number]
+export type Tech = "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "reactjs" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
 
 interface Project {
   title: string;
