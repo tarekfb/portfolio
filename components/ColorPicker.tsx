@@ -1,6 +1,6 @@
 "use client"
 import { useContext, useState } from "react";
-import { BlobContext } from "./BlobProvider";
+import { BlobContext } from "./context/BlobProvider";
 
 const colors = [
   { name: "Purple", oklchCss: "oklch(0.638 0.146 300.9)" },

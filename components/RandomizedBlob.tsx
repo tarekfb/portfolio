@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { BlobContext } from "./BlobProvider";
+import { BlobContext } from "./context/BlobProvider";
 import { motion } from "framer-motion"; // 👈 Import motion
 
 export default function RandomizedBlob() {
