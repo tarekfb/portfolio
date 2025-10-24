@@ -4,7 +4,12 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-const toggleThemeClasses = () => {
+
+
+export default function DarkModeToggle() {
+    const [isDark, setIsDark] = useState(document ? document.documentElement.classList.contains('dark') : false);
+
+    const toggleThemeClasses = () => {
     // if set via local storage previously
     if (localStorage.getItem('color-theme')) {
         if (localStorage.getItem('color-theme') === 'light') {
@@ -26,9 +31,6 @@ const toggleThemeClasses = () => {
         }
     }
 }
-
-export default function DarkModeToggle() {
-    const [isDark, setIsDark] = useState(document ? document.documentElement.classList.contains('dark') : false);
 
     const toggleDarkMode = () => {
         setIsDark((prevValue) => !prevValue);
