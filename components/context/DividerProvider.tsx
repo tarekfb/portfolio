@@ -19,18 +19,19 @@ const dividerDataPaths = [
     "M0,64L48,106.7C96,149,192,235,288,261.3C384,288,480,256,576,234.7C672,213,768,203,864,213.3C960,224,1056,256,1152,250.7C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
 ]
 
-const generateRandomDividerPath = (current: string) => {
+const generateRandomDividerPath = (current: string[]) => {
     let newPath = '';
     do {
         newPath = dividerDataPaths[Math.floor(Math.random() * dividerDataPaths.length)];
         console.log({newPath, current})
-    } while (newPath === current);
+    } while (!current.some(c => c === newPath))
     return newPath;
 };
 
 const initDivider = {
     dividerPathData: dividerDataPaths[0],
     dividerPathData2: dividerDataPaths[1],
+    dividerPathData3: dividerDataPaths[3],
     setRandomDivider: () => {
         console.warn('setRandomDivider was called without a provider - doing nothing.');
     },
@@ -44,20 +45,23 @@ export default function DividerProvider({
     children: React.ReactNode
 }) {
     const [dividerPathData, setDividerPathData] = useState(initDivider.dividerPathData);
-    const [dividerPathData2, setDividerPathData2] = useState(initDivider.dividerPathData);
+    const [dividerPathData2, setDividerPathData2] = useState(initDivider.dividerPathData2);
+    const [dividerPathData3, setDividerPathData3] = useState(initDivider.dividerPathData3);
     const setRandomDivider = useCallback(() => {
         const firstDivider = generateRandomDividerPath(dividerPathData);
-        setDividerPathData(firstDivider);
         let secondDivider = ''
         do {
             secondDivider = generateRandomDividerPath(dividerPathData2);
         } while (secondDivider === firstDivider);
+
+        setDividerPathData(firstDivider);
         setDividerPathData2(secondDivider);
     }, [dividerPathData, dividerPathData2]);
 
     const contextValue = useMemo(() => ({
         dividerPathData,
         dividerPathData2,
+        dividerPathData3,
         setRandomDivider,
     }), [dividerPathData, setRandomDivider]);
 
