@@ -5,7 +5,7 @@ import * as blobs2 from "blobs/v2";
 
 const config = {
     extraPoints: 8,
-    randomness: 4,
+    randomness: 8,
     size: 256,
 }
 

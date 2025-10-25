@@ -53,7 +53,7 @@ function Projects() {
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
           A small selection of{" "}
           <span className="text-accent">recent projects</span>
         </h2>

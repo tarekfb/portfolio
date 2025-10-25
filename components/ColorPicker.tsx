@@ -1,19 +1,20 @@
 "use client"
 import { useContext, useState } from "react";
 import { BlobContext } from "./context/BlobProvider";
+import { DividerContext } from "./context/DividerProvider";
 
 const colors = [
-  { name: "Purple", oklchCss: "oklch(0.638 0.146 300.9)" },
-  { name: "Blue", oklchCss: "oklch(0.4423 0.2442 271.46)" },
-  { name: "Green", oklchCss: "oklch(0.604 0.2516 145.46)" },
-  { name: "Orange", oklchCss: "oklch(0.7335 0.1875 56.51)" },
-  { name: "Pink", oklchCss: "oklch(0.6599 0.3009 4.63)" },
-  { name: "Red", oklchCss: "oklch(0.5776 0.2541 22.63)" }
+    { name: "Blue", oklchCss: "var(--color-blue)" },
+  { name: "Green", oklchCss: "var(--color-green)" },
+  { name: "Orange", oklchCss: "var(--color-orange)" },
+  { name: "Pink", oklchCss: "var(--color-pink)" },
+  { name: "Red", oklchCss: "var(--color-red)" }
 ];
 
 function ColorPicker() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const { setRandomBlob } = useContext(BlobContext);
+  const { setRandomDivider } = useContext(DividerContext);
 
   const applyColor = (color: typeof colors[0]) => {
     if (selectedColor === color)
@@ -29,6 +30,7 @@ function ColorPicker() {
     // }
 
     setRandomBlob()
+    setRandomDivider()
   };
 
   return (
@@ -38,7 +40,7 @@ function ColorPicker() {
           <button
             key={color.name}
             onClick={() => applyColor(color)}
-            className={`size-6 md:size-8 rounded-full hover:scale-110 transition-transform hover:cursor-pointer ${selectedColor.name === color.name && 'border-2 border-solid border-background dark:border-foreground scale-75'}`}
+            className={`size-6 md:size-8 rounded-full hover:scale-110 transition-transform hover:cursor-pointer ${selectedColor.name === color.name && 'border-2 border-solid border-foreground scale-75'}`}
             style={{
               backgroundColor: color.oklchCss,
             }}
