@@ -23,7 +23,7 @@ const generateRandomDividerPath = (current: string[]) => {
     let newPath = '';
     do {
         newPath = dividerDataPaths[Math.floor(Math.random() * dividerDataPaths.length)];
-        console.log({newPath, current})
+        console.log({ newPath, current })
     } while (!current.some(c => c === newPath))
     return newPath;
 };
@@ -48,14 +48,13 @@ export default function DividerProvider({
     const [dividerPathData2, setDividerPathData2] = useState(initDivider.dividerPathData2);
     const [dividerPathData3, setDividerPathData3] = useState(initDivider.dividerPathData3);
     const setRandomDivider = useCallback(() => {
-        const firstDivider = generateRandomDividerPath(dividerPathData);
-        let secondDivider = ''
-        do {
-            secondDivider = generateRandomDividerPath(dividerPathData2);
-        } while (secondDivider === firstDivider);
+        const first = generateRandomDividerPath([dividerPathData2, dividerPathData, dividerPathData3]);
+        const second = generateRandomDividerPath([dividerPathData2, dividerPathData, dividerPathData3])
+        const third = generateRandomDividerPath([dividerPathData2, dividerPathData, dividerPathData3])
 
-        setDividerPathData(firstDivider);
-        setDividerPathData2(secondDivider);
+        setDividerPathData(first);
+        setDividerPathData2(second);
+        setDividerPathData3(third);
     }, [dividerPathData, dividerPathData2]);
 
     const contextValue = useMemo(() => ({
