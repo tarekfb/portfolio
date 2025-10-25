@@ -5,13 +5,13 @@ import { DividerContext } from "./context/DividerProvider";
 import { motion } from "framer-motion";
 
 export default function RandomizedDivider() {
-    const { dividerPathData, dividerPathData2 } = useContext(DividerContext);
+    const { dividerPathData, dividerPathData2, dividerPathData3 } = useContext(DividerContext);
     return (
         <>
             <div className="-mb-32 md:-mb-66">
                 <motion.svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
                     <motion.path initial={false} className="fill-accent-light"
-                        animate={{ d: dividerPathData2 }}
+                        animate={{ d: dividerPathData3 }}
                         transition={{ duration: 1, ease: "easeInOut" }}
                     />
                 </motion.svg>
