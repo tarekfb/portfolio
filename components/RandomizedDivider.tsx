@@ -8,7 +8,7 @@ export default function RandomizedDivider() {
     const { dividerPathData, dividerPathData2, dividerPathData3 } = useContext(DividerContext);
     return (
         <>
-            <div className="-mb-32 md:-mb-66">
+            <div className="-mb-32 md:-mb-72">
                 <motion.svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
                     <motion.path initial={false} className="fill-accent-light"
                         animate={{ d: dividerPathData3 }}
