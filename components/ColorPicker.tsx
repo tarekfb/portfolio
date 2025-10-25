@@ -24,11 +24,6 @@ function ColorPicker() {
     const root = document.documentElement;
     root.style.setProperty("--accent", color.oklchCss);
 
-    // // For dark mode, adjust the hero bg
-    // if (root.classList.contains("dark")) {
-    //   root.style.setProperty("--hero-bg", `${color.hue} ${color.saturation}% ${color.lightness}%`);
-    // }
-
     setRandomBlob()
     setRandomDivider()
   };

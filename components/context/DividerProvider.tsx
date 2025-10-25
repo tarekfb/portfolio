@@ -23,12 +23,14 @@ const generateRandomDividerPath = (current: string) => {
     let newPath = '';
     do {
         newPath = dividerDataPaths[Math.floor(Math.random() * dividerDataPaths.length)];
+        console.log({newPath, current})
     } while (newPath === current);
     return newPath;
 };
 
 const initDivider = {
     dividerPathData: dividerDataPaths[0],
+    dividerPathData2: dividerDataPaths[1],
     setRandomDivider: () => {
         console.warn('setRandomDivider was called without a provider - doing nothing.');
     },
@@ -42,13 +44,20 @@ export default function DividerProvider({
     children: React.ReactNode
 }) {
     const [dividerPathData, setDividerPathData] = useState(initDivider.dividerPathData);
+    const [dividerPathData2, setDividerPathData2] = useState(initDivider.dividerPathData);
     const setRandomDivider = useCallback(() => {
-        const newDivider = generateRandomDividerPath(dividerPathData);
-        setDividerPathData(newDivider);
-    }, []);
+        const firstDivider = generateRandomDividerPath(dividerPathData);
+        setDividerPathData(firstDivider);
+        let secondDivider = ''
+        do {
+            secondDivider = generateRandomDividerPath(dividerPathData2);
+        } while (secondDivider === firstDivider);
+        setDividerPathData2(secondDivider);
+    }, [dividerPathData, dividerPathData2]);
 
     const contextValue = useMemo(() => ({
         dividerPathData,
+        dividerPathData2,
         setRandomDivider,
     }), [dividerPathData, setRandomDivider]);
 
