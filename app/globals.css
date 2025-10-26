@@ -27,10 +27,6 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
-  --color-accent-light: color-mix(in srgb, var(--accent) 75%, white);
-  --color-accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
-  --color-accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
-
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-primary-foreground: var(--primary-foreground);
@@ -43,6 +39,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-accent-light: var(--accent-light);
+  --color-accent-lighter: var(--accent-lighter);
+  --color-accent-lightest: var(--accent-lightest);
 }
 
 :root {
@@ -81,6 +80,9 @@
   --color-orange: oklch(0.77 0.1654 61.31);
   --color-pink: oklch(0.7 0.2503 342.6);
   --color-red: oklch(0.66 0.2284 26.18);
+  --accent-light: color-mix(in srgb, var(--accent) 75%, white);
+  --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+  --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
 }
 
 .dark {
@@ -118,12 +120,16 @@
   --color-orange: oklch(0.7335 0.1875 56.51);
   --color-pink: oklch(0.43 0.1809 346.25);
   --color-red: oklch(0.4 0.1632 29.23);
+  --accent-light: color-mix(in srgb, var(--accent) 25%, black);
+  --accent-lighter: color-mix(in srgb, var(--accent) 50%, black);
+  --accent-lightest: color-mix(in srgb, var(--accent) 75%, black);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

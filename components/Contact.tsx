@@ -12,7 +12,7 @@ function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {"Let's work together"}
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-8 dark:text-foreground/75">
               {"I'm always open to discussing new projects, creative ideas or just grabbing a coffee."}
             </p>
 
