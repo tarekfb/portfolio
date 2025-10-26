@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { BlobContext } from "./context/BlobProvider";
 import { motion } from "framer-motion"; 
-
+// initial={{ d: take blob data from function}}
 export default function RandomizedBlob() {
     const { blobPathData } = useContext(BlobContext);
     return (
