@@ -49,7 +49,7 @@ const generateRandomDividerPath = (current: string[]) => {
         let newPath = '';
         do {
             newPath = dividerDataPaths[Math.floor(Math.random() * dividerDataPaths.length)];
-        } while (current.some(divider => divider === newPath) && dividers.some(divider => divider === newPath))
+        } while (current.some(divider => divider === newPath) || dividers.some(divider => divider === newPath))
         dividers.push(newPath);
     })
     return dividers
