@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import TechStackIcon from "./TechStackIcon";
 import Image from "next/image";
 
-export type Tech = "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "reactjs" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
+export type Tech = "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "react" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
 
 interface Project {
   title: string;

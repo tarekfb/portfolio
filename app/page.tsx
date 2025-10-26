@@ -5,7 +5,9 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import BlobProvider from "@/components/context/BlobProvider";
 import DividerProvider from "@/components/context/DividerProvider";
+import TechStackIcon from "@/components/TechStackIcon";
 
+const techs = ["react", "nextjs", "typescript", "tailwindcss"]
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -19,6 +21,12 @@ export default function Home() {
         <Projects />
         <Contact />
       </DividerProvider>
-    </div >
+      <footer className="container bg-accent-lightest flex flex-col items-center gap-y-2 px-8">
+        <div>
+          <span className="text-muted-foreground mb-8 dark:text-foreground/75">Copyright 2025</span> | Tarek Bermalm
+        </div>
+        <div>Made with: <div className="space-x-1.5"><TechStackIcon tech="react" /><TechStackIcon tech="nextjs" /><TechStackIcon tech="tailwindcss" /><TechStackIcon tech="typescript" /></div> </div>
+      </footer>
+    </div>
   );
 }
