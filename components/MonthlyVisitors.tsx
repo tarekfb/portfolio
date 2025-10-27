@@ -18,6 +18,6 @@ export default function MonthlyVisitors({ amount }: MonthlyVisitorsProps) {
       animate(count, amount, { duration: 5 });
     }
   }, [count, inView, amount]);
-  
-  return <div>Monthly visitors: <motion.span ref={ref} className="font-mono">{rounded}</motion.span>+</div>
+
+  return <div>Monthly visitors: <motion.span ref={ref} className="font-mono text-accent">{rounded}</motion.span>+</div>
 }
