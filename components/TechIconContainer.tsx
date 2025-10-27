@@ -1,4 +1,3 @@
-import StackIcon from "tech-stack-icons";
 import { Tech } from "./Projects";
 import {
   Tooltip,
@@ -10,30 +9,20 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import TechIcon from "./TechIcon";
 
 interface TechStackIconProps {
   tech: Tech;
   size?: "md" | "lg";
-  variant?: "light" | "dark" | "grayscale";
 }
 
-function Icon({ tech, size = "lg", variant = "dark" }: TechStackIconProps) {
-  return (
-    <div className={`size-${size === "md" ? "8" : "9"} -mr-1.5 rounded-full overflow-hidden flex items-center justify-center p-0.5 bg-background border border-solid border-accent`}>
-      <div className="rounded-full p-1.5 flex items-center justify-center bg-background">
-        <StackIcon name={tech} variant={variant} />
-      </div>
-    </div>
-  )
-}
-
-export default function TechStackIcon({ tech, size = "lg", variant = "dark" }: TechStackIconProps) {
+export default function TechStackIcon({ tech, size = "lg", }: TechStackIconProps) {
   return (
     <>
       <div className="inline md:hidden">
         <Popover>
           <PopoverTrigger>
-            <Icon tech={tech} size={size} variant={variant} />
+            <TechIcon tech={tech} size={size}  />
           </PopoverTrigger>
           <PopoverContent>
             <p>{tech}</p>
@@ -43,7 +32,7 @@ export default function TechStackIcon({ tech, size = "lg", variant = "dark" }: T
       <div className="hidden md:inline">
         <Tooltip>
           <TooltipTrigger>
-            <Icon tech={tech} size={size} variant={variant} />
+            <TechIcon tech={tech} size={size} />
           </TooltipTrigger>
           <TooltipContent>
            { <p>{tech}</p>}

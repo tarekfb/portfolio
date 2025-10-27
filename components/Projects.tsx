@@ -1,26 +1,26 @@
 import { Card } from "@/components/ui/card";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import TechStackIcon from "./TechStackIcon";
+import TechStackIcon from "./TechIconContainer";
 import Image from "next/image";
 
-export type Tech = "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "react" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
+export type Tech = "cloudflare" | "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "react" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
 
 interface Project {
   title: string;
   description: string;
   image: string;
   techStack: Tech[];
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 const projects: Project[] = [
   {
     title: "Digitutor",
-    description: "Platform for pairing teacher and students for programming tutoring.",
+    description: "Fully featured platform for pairing teacher and students for programming tutoring. Includes payment system, CI/CD with test & prod environments, ",
     image: "/digitutor.png",
-    techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase"],
+    techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase", "cloudflare"],
     githubUrl: "https://github.com/tarekfb/mindic",
     liveUrl: "https://digitutor.se",
   },
@@ -39,13 +39,21 @@ const projects: Project[] = [
     techStack: ["sveltejs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/yakiita-hantverk",
     liveUrl: "https://yakiita-hantverk.vercel.app/",
-  },  {
+  },
+  {
     title: "Pre-launch sign-up",
-    description: "A marketing page to find users before launch.",
+    description: "A marketing page to recruit teachers before launch of Digitutor. Resulted in 50-60 sign-ups.",
     image: "/preregister.png",
     techStack: ["sveltejs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/preregister",
     liveUrl: "https://preregister-6uk.pages.dev/",
+  },
+  {
+    title: "You're looking at it",
+    description: "Just here to provide source code & tech stack •‿•",
+    image: "/portfolio-dark.png",
+    techStack: ["react", "nextjs", "typescript", "tailwindcss"],
+    githubUrl: "https://github.com/tarekfb/preregister",
   },
 ];
 
@@ -60,41 +68,41 @@ function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {projects.map((project, index) => (
-          
-              <Card
-                key={index}
-                className="flex flex-col overflow-hidden bg-card border-accent/50 hover:shadow-xl transition-shadow"
-              >
-                <div className="relative w-full h-48 bg-muted">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={1400}
-                    height={750}
-                    className="w-full h-full"
-                  />
+            <Card
+              key={index}
+              className="flex flex-col overflow-hidden bg-card border-accent/50 hover:shadow-xl transition-shadow"
+            >
+              <div className="relative w-full h-48 bg-muted">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={1400}
+                  height={750}
+                  className="w-full h-full"
+                />
+              </div>
+
+              <div className="p-6 pb-4 grow flex flex-col justify-between ">
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-card-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-sm">
+                    {project.description}
+                  </p>
                 </div>
 
-                <div className="p-6 pb-4 grow flex flex-col justify-between ">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 text-sm">
-                      {project.description}
-                    </p>
+                <div className="flex justify-between gap-x-2">
+                  <div className="flex items-center">
+                    {project.techStack.map((tech, i) => (
+                      i <= 5 && (
+                        <TechStackIcon key={tech} tech={tech} />
+                      )
+                    ))}
                   </div>
 
-                  <div className="flex justify-between gap-x-2">
-                    <div className="flex items-center">
-                      {project.techStack.map((tech, i) => (
-                        i <= 5 && (
-                          <TechStackIcon key={tech} tech={tech} />
-                        )
-                      ))}
-                    </div>
-
-                    <div className="flex justify-end gap-1.5">
+                  <div className="flex justify-end gap-1.5">
+                    {project.githubUrl && (
                       <Button
                         variant="ghost"
                         size="icon"
@@ -108,6 +116,8 @@ function Projects() {
                           <Github className="size-6" />
                         </a>
                       </Button>
+                    )}
+                    {project.liveUrl && (
                       <Button
                         variant="ghost"
                         size="icon"
@@ -121,10 +131,11 @@ function Projects() {
                           <ExternalLink className="size-6" />
                         </a>
                       </Button>
-                    </div>
+                    )}
                   </div>
                 </div>
-              </Card>
+              </div>
+            </Card>
           ))}
         </div>
       </div>

@@ -5,8 +5,7 @@ import RandomizedBlob from "./RandomizedBlob";
 
 function Hero() {
     return (
-        <section className="relative min-h-[85vh] md:min-h-screen flex flex-col items-center pt-10 md:pt-0 bg-gradient-to-b to-foreground dark:to-background from-accent">
-
+        <section className="relative min-h-[85vh] md:min-h-screen flex flex-col items-center pt-2 bg-gradient-to-b to-foreground dark:to-background from-accent">
             <RandomizedBlob />
             <div className="absolute bottom-20 md:bottom-25 right-0 md:right-0">
                 <Image src={cutout} alt="profile photo" width={401} height={422} loading="lazy" fetchPriority="low" className="w-[300px] md:w-[350px] lg:w-[450px]" />
