@@ -3,6 +3,7 @@ import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TechStackIcon from "./TechIconContainer";
 import Image from "next/image";
+import MonthlyVisitors from "./MonthlyVisitors";
 
 export type Tech = "cloudflare" | "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "react" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
 
@@ -58,6 +59,7 @@ const projects: Project[] = [
 ];
 
 function Projects() {
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -87,6 +89,9 @@ function Projects() {
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">
                     {project.title}
                   </h3>
+                  {project.title === "Weekly positive news" && (
+                    <MonthlyVisitors amount={2000} />
+                  )}
                   <p className="text-muted-foreground mb-4 text-sm">
                     {project.description}
                   </p>
