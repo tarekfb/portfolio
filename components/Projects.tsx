@@ -80,7 +80,7 @@ function Projects() {
                   alt={project.title}
                   width={1400}
                   height={750}
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
