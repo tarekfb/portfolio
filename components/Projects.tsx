@@ -51,7 +51,7 @@ const projects: Project[] = [
   },
   {
     title: "You're looking at it",
-    description: "Just here to provide source code & tech stack •‿•",
+    description: "Just here to provide source code & tech stack for this website •‿•",
     image: "/portfolio-dark.png",
     techStack: ["react", "nextjs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/portfolio",

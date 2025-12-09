@@ -6,13 +6,13 @@ function Contact() {
   return (
     <>
     <RandomizedDivider />
-      <section id="contact" className="pb-12 md:-mt-4 bg-accent-lightest">
+      <section id="contact" className="pb-12 md:-mt-4 bg-accent-light">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {"Let's work together"}
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 dark:text-foreground/75">
+            <p className="text-xl text-foreground/75 mb-8 dark:text-foreground/75">
               {"I'm always open to discussing new projects, creative ideas or just grabbing a coffee."}
             </p>
 
@@ -39,7 +39,7 @@ function Contact() {
                   LinkedIn
                 </a>
               </Button>
-              <Button size="lg" variant="accent" asChild className="gap-2">
+              <Button size="lg"  asChild className="gap-2">
                 <a href="mailto:tarek@digitutor.se">
                   <Mail className="size-5" />
                   Email Me
