@@ -30,7 +30,7 @@ export default function RandomizedDivider() {
                 </svg>
                 <div className="h-24 bg-accent-lighter"></div>
             </div>
-            <svg viewBox="0 0 1440 320" className="w-full">
+            <svg viewBox="0 0 1440 320" className="w-full md:mb-4">
                 <motion.path
                     className="fill-accent-lightest stroke-accent-lightest stroke-2"
                     initial={false}
