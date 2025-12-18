@@ -17,14 +17,14 @@ interface Project {
 }
 
 const projects: Project[] = [
-  // {
-  //   title: "Digitutor",
-  //   description: "Fully featured platform for pairing teacher and students for programming tutoring. Includes payment system, CI/CD with test & prod environments, ",
-  //   image: "/digitutor.png",
-  //   techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase", "cloudflare"],
-  //   githubUrl: "https://github.com/tarekfb/mindic",
-  //   liveUrl: "https://digitutor.se",
-  // },
+  {
+    title: "Digitutor",
+    description: "Fully featured platform for pairing teacher and students for programming tutoring. Includes payment system, CI/CD with test & prod environments, and more.",
+    image: "/digitutor.png",
+    techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase", "cloudflare"],
+    githubUrl: "https://github.com/tarekfb/digitutor",
+    liveUrl: "https://mindic.pages.dev/",
+  },
   {
     title: "Weekly positive news",
     description: "Automated fetching of weekly positive news at reddit.com/r/sweden.",
