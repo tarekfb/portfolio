@@ -5,6 +5,7 @@ import RandomizedBlob from "./RandomizedBlob";
 import InvertedDivider from "./InvertedDivider";
 import RandomizedDivider from "./RandomizedDivider";
 
+// need to add randominsed blob to action text or something like that (see projects)
 function Hero() {
     return (
         <>
