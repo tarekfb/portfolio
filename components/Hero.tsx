@@ -23,7 +23,7 @@ function Hero() {
                             {"I'm a frontend-focused full stack developer. Reach out if you have any questions or just want to chat!"}
                         </p>
 
-                            <ButtonBlob targetId="#projects" >Projects</ButtonBlob>
+                            <ButtonBlob targetId="#projects" >view ./projects</ButtonBlob>
 
                     </div>
                 </div>
