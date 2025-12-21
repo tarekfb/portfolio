@@ -8,7 +8,7 @@ export default function RandomizedDivider() {
 
     return (
         <>
-            <div className="-mb-42 md:-mb-54 lg:-mb-66 xl:-mb-86 2xl:-mb-92">
+            <div className="-mb-30 md:-mb-54 lg:-mb-66 xl:-mb-86 2xl:-mb-92">
             <svg viewBox="0 0 1440 320" className="w-full">
                     <motion.path
                         className="fill-accent-light stroke-accent-light stroke-2"
@@ -19,7 +19,7 @@ export default function RandomizedDivider() {
                 </svg>
                 <div className="h-18 md:h-34 bg-accent-light"></div>
              </div>
-            <div className="-mb-42 md:-mb-54 lg:-mb-66 xl:-mb-86 2xl:-mb-92">
+            <div className="-mb-30 md:-mb-54 lg:-mb-66 xl:-mb-86 2xl:-mb-92">
                 <svg viewBox="0 0 1440 320" className="w-full">
                     <motion.path
                         className="fill-accent-lighter stroke-accent-lighter stroke-2 "
