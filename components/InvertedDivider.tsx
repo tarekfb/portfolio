@@ -10,7 +10,7 @@ export default function RandomizedDivider() {
         <div style={{ transform: 'scaleY(-1)' }}>
             <svg viewBox="0 0 1440 320" className="w-full">
                 <motion.path
-                    className="fill-accent-light stroke-accent-light stroke-2"
+                    className="fill-accent-lightest stroke-accent-lightest stroke-2"
                     initial={false}
                     animate={{ d: firstPath }}
                     transition={{ duration: 1, ease: "easeInOut" }}

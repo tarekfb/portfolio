@@ -21,9 +21,9 @@ function ScrollToProjectsButton({
   }, [targetId])
 
   return (
-    <Button size="xl" variant="accent" className="text-foreground" onClick={scrollToProjects}>
+    <button className="absolute " onClick={scrollToProjects}>
       {children}
-    </Button>
+    </button>
   );
 };
 

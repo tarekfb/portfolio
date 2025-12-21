@@ -4,9 +4,9 @@ import { createContext, useCallback, useMemo, useState } from 'react'
 import * as blobs2 from "blobs/v2";
 
 const config = {
-    extraPoints: 8,
-    randomness: 8,
-    size: 256,
+    extraPoints: 4,
+    randomness: 9,
+    size: 96,
 }
 
 const generateRandomBlobPath = () => blobs2.svgPath({
