@@ -5,7 +5,7 @@ function Hero() {
     return (
         <>
             <section className="flex flex-col items-center pt-2 bg-gradient-to-b from-accent to-accent-lightest">
-                <div className="container px-6 z-10 mb-24">
+                <div className="container px-6 z-10 mb-12">
                     <div className="max-w-4xl">
                         <h1 className="text-7xl md:text-9xl font-bold mb-6 leading-none">
                             <span className="block">Tarek</span>
@@ -16,7 +16,7 @@ function Hero() {
                             {"I'm a frontend-focused full stack developer. Reach out if you have any questions or just want to chat!"}
                         </p>
 
-                        <ViewTerminal targetId="#projects" terminalText="cd /projects" />
+                        <ViewTerminal placeholder="Go to projects" targetId="#projects" terminalText="cd /projects" />
                     </div>
                 </div>
 

@@ -1,20 +1,30 @@
+"use client";
 import { Card } from "@/components/ui/card";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TechStackIcon from "./TechIconContainer";
 import Image from "next/image";
 import MonthlyVisitors from "./MonthlyVisitors";
+import { motion, useAnimation, useInView, type Variants } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export type Tech = "cloudflare" | "nextjs" | "sveltejs" | "css" | "html" | "javascript" | "react" | "supabase" | "typescript" | "nodejs" | "postgresql" | "tailwindcss"
 
-interface Project {
+type Project = {
   title: string;
   description: string;
   image: string;
   techStack: Tech[];
-  githubUrl?: string;
-  liveUrl?: string;
-}
+} &
+  ({
+    githubUrl: string;
+    liveUrl?: string;
+  }
+    |
+  {
+    githubUrl?: string;
+    liveUrl: string;
+  })
 
 const projects: Project[] = [
   {
@@ -60,6 +70,40 @@ const projects: Project[] = [
 
 function Projects() {
 
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      }
+    }
+  }
+
+  const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring", stiffness: 100,
+      }
+    }
+  }
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "10px"});
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+
+    }
+  }, [controls, inView]);
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -68,81 +112,93 @@ function Projects() {
           <span className="text-accent">recent projects</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <motion.div variants={containerVariants} ref={ref} initial="hidden" animate={controls} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {projects.map((project, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="flex flex-col overflow-hidden bg-card border-accent/50 hover:shadow-xl transition-shadow"
+              variants={itemVariants}
+              className="flex flex-col"
             >
-              <div className="relative w-full h-48 bg-muted">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1400}
-                  height={750}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="p-6 pb-4 grow flex flex-col justify-between ">
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                    {project.title}
-                  </h3>
-                  {project.title === "Weekly positive news" && (
-                    <MonthlyVisitors amount={2000} />
-                  )}
-                  <p className="text-muted-foreground mb-4 text-sm">
-                    {project.description}
-                  </p>
+              <Card
+                className="h-full flex flex-col overflow-hidden bg-card border-accent/50 hover:shadow-xl transition-shadow"
+              >
+                <div className="relative w-full h-48 bg-muted">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={1400}
+                    height={750}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
-                <div className="flex justify-between gap-x-2">
-                  <div className="flex items-center">
-                    {project.techStack.map((tech, i) => (
-                      i <= 5 && (
-                        <TechStackIcon key={tech} tech={tech} />
-                      )
-                    ))}
+                <div className="p-6 pb-4 grow flex flex-col justify-between ">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-card-foreground">
+                      {project.title}
+                    </h3>
+                    {project.title === "Weekly positive news" && (
+                      <MonthlyVisitors amount={2000} />
+                    )}
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      {project.description}
+                    </p>
                   </div>
 
-                  <div className="flex justify-end gap-1.5">
-                    {project.githubUrl && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        asChild
-                      >
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                  <div className="flex justify-between gap-x-2">
+                    <div className="flex items-center">
+                      {project.techStack.map((tech, i) => (
+                        i <= 5 && (
+                          <TechStackIcon key={tech} tech={tech} />
+                        )
+                      ))}
+                    </div>
+
+                    <div className="flex justify-end gap-1.5">
+                      {project.githubUrl && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          asChild
                         >
-                          <Github className="size-6" />
-                        </a>
-                      </Button>
-                    )}
-                    {project.liveUrl && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        asChild
-                      >
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          <motion.a
+                            href={project.githubUrl}
+                            target="_blank"
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                            whileTap={{ scale: 0.95 }}
+                            rel="noopener noreferrer"
+                            aria-label="navigate to github repo"
+                          >
+                            <Github className="size-6" />
+                          </motion.a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          asChild
                         >
-                          <ExternalLink className="size-6" />
-                        </a>
-                      </Button>
-                    )}
+                          <motion.a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                            whileTap={{ scale: 0.95 }}
+                            aria-label="navigate to site"
+
+                          >
+                            <ExternalLink className="size-6" />
+                          </motion.a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
