@@ -7,7 +7,7 @@ export default function ButtonBlob({ children, targetId }: { children: React.Rea
     const { blobPathData } = useContext(BlobContext);
     return (
 
-        <a href={targetId} className=" inline-flex  items-center font-mono bg-foreground text-background px-2 py-1 text-3xl">
+        <a href={targetId} className=" inline-flex items-center font-mono bg-foreground text-background px-2 py-1 text-3xl rounded">
             <span className="font-mono"><span className="text-accent">{'> '}</span>{children}</span>
             <motion.span
                 animate={{ opacity: [0, 1, 0] }}
