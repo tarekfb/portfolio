@@ -19,7 +19,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Digitutor",
-    description: "Fully featured platform for pairing teacher and students for programming tutoring. Includes payment system, CI/CD with test & prod environments, and more.",
+    description: "Fully featured platform for pairing teacher and students for programming tutoring. Includes automated tests (e2e, unit), error reporting (sentry), payment system (stripe), ci/cd with test & prod environments, and more.",
     image: "/digitutor.png",
     techStack: ["sveltejs", "typescript", "postgresql", "tailwindcss", "supabase", "cloudflare"],
     githubUrl: "https://github.com/tarekfb/digitutor",
