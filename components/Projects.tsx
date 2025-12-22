@@ -94,7 +94,7 @@ function Projects() {
   }
 
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "10px"});
+  const inView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
