@@ -1,6 +1,5 @@
 "use client"
 import { useContext, useState } from "react";
-import { BlobContext } from "./context/BlobProvider";
 import { DividerContext } from "./context/DividerProvider";
 
 const colors = [
@@ -13,7 +12,6 @@ const colors = [
 
 function ColorPicker() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const { setRandomBlob } = useContext(BlobContext);
   const { setRandomDivider } = useContext(DividerContext);
 
   const applyColor = (color: typeof colors[0]) => {
@@ -24,7 +22,6 @@ function ColorPicker() {
     const root = document.documentElement;
     root.style.setProperty("--accent", color.oklchCss);
 
-    setRandomBlob()
     setRandomDivider()
   };
 

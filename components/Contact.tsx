@@ -6,7 +6,7 @@ function Contact() {
   return (
     <>
     <RandomizedDivider />
-      <section id="contact" className="pb-12 md:-mt-4 bg-accent-lightest">
+      <section id="contact" className="pb-12 bg-accent-lightest">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
