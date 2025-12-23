@@ -1,5 +1,5 @@
 # Portfolio
 * React & Nextjs (server components)
 * Typescript
-* TailwindCSS
+* TailwindCSS, shadcn
 * framer-motion
