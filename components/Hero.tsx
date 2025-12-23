@@ -16,7 +16,7 @@ function Hero() {
                             {"I'm a frontend-focused full stack developer. Reach out if you have any questions or just want to chat!"}
                         </p>
 
-                        <ViewTerminal placeholder="Go to projects" targetId="#projects" terminalText="cd /projects" />
+                        <ViewTerminal placeholder="Go to projects" targetId="#projects" terminalText="cd ~/projects" />
                     </div>
                 </div>
 
