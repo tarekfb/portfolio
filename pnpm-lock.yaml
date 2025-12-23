@@ -20,9 +20,6 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      blobs:
-        specifier: 2.3.0-beta.2
-        version: 2.3.0-beta.2
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1048,9 +1045,6 @@ packages:
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
-
-  blobs@2.3.0-beta.2:
-    resolution: {integrity: sha512-kzLT5TOg/hsETxeyHae1sNpRWXNHnB1VN467FASoZfLRm4LdoXyp6HTTjes0cPE1sOVoOHEJFT9qyFGOpQFvPw==}
 
   brace-expansion@1.1.12:
     resolution: {integrity: sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==}
@@ -3168,10 +3162,6 @@ snapshots:
   axobject-query@4.1.0: {}
 
   balanced-match@1.0.2: {}
-
-  blobs@2.3.0-beta.2:
-    dependencies:
-      simplex-noise: 4.0.3
 
   brace-expansion@1.1.12:
     dependencies:
