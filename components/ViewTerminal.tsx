@@ -29,9 +29,7 @@ export default function ViewProjects({ terminalText, targetId, placeholder }: { 
 
         <Tooltip>
             <TooltipTrigger>
-
-
-                <a href={targetId} className="inline-flex items-center font-mono bg-foreground text-background px-2 py-1 text-3xl rounded-lg hover:bg-foreground/75 active:bg-foreground/75 focus:bg-foreground/75">
+                <a href={targetId} className="inline-flex items-center font-mono bg-foreground text-background px-1.5 py-1 text-2xl rounded-lg hover:bg-foreground/75 active:bg-foreground/75 focus:bg-foreground/75">
                     <span className="font-mono"><span className="text-accent">{'> '}</span>{text}</span>
                     <motion.span
                         animate={{ opacity: [0, 1, 0] }}

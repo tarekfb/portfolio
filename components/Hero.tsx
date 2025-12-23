@@ -4,7 +4,7 @@ import ViewTerminal from "./ViewTerminal";
 function Hero() {
     return (
         <>
-            <section className="flex flex-col items-center pt-2 bg-gradient-to-b from-accent to-accent-lightest">
+            <section className="min-h-[75vh] md:min-h-auto flex flex-col items-center pt-2 bg-gradient-to-b from-accent to-accent-lightest">
                 <div className="container px-6 z-10 mb-12">
                     <div className="max-w-4xl">
                         <h1 className="text-7xl md:text-9xl font-bold mb-6 leading-none">
