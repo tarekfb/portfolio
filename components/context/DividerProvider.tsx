@@ -84,14 +84,14 @@ export default function DividerProvider({
         setFirst(dividers[0]);
         setSecond(dividers[1]);
         setThird(dividers[2]);
-    }, [first, second]);
+    }, [first, second, third]);
 
     const contextValue = useMemo(() => ({
         firstPath: first,
         secondPath: second,
         thirdPath: third,
         setRandomDivider,
-    }), [first, setRandomDivider]);
+    }), [first, second, setRandomDivider, third]);
 
     return <DividerContext.Provider value={contextValue}>{children}</DividerContext.Provider>
 }
