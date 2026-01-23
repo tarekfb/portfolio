@@ -8,8 +8,8 @@ export default function RandomizedDivider() {
 
     return (
         <>
-            <div className="-mb-30 sm:-mb-40 md:-mb-54 lg:-mb-66 xl:-mb-76 2xl:-mb-82">
-            <svg viewBox="0 0 1440 320" className="w-full">
+            <div className="-mb-96 md:-mb-[40vh]">
+                <svg viewBox="0 0 1440 320" className="w-full">
                     <motion.path
                         className="fill-accent-light stroke-accent-light stroke-2"
                         initial={false}
@@ -17,9 +17,9 @@ export default function RandomizedDivider() {
                         transition={{ duration: 1, ease: "easeInOut" }}
                     />
                 </svg>
-                <div className="h-18 md:h-34 bg-accent-light"></div>
-             </div>
-            <div className="-mb-30 sm:-mb-40 md:-mb-54 lg:-mb-66 xl:-mb-76 2xl:-mb-82">
+                <div className="h-96 bg-accent-light"></div>
+            </div>
+            <div className="-mb-96 md:-mb-[40vh]">
                 <svg viewBox="0 0 1440 320" className="w-full">
                     <motion.path
                         className="fill-accent-lighter stroke-accent-lighter stroke-2 "
@@ -28,7 +28,7 @@ export default function RandomizedDivider() {
                         transition={{ duration: 1, ease: "easeInOut" }}
                     />
                 </svg>
-                <div className="h-22 md:h-34 bg-accent-lighter"></div>
+                <div className="h-96 bg-accent-lighter"></div>
             </div>
             <svg viewBox="0 0 1440 320" className="w-full">
                 <motion.path
