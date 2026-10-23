@@ -41,7 +41,7 @@ const projects: Project[] = [
     image: "/veckans.png",
     techStack: ["sveltejs", "typescript", "tailwindcss"],
     githubUrl: "https://github.com/tarekfb/veckans",
-    liveUrl: "https://veckans.site",
+    liveUrl: "https://veckans.vercel.app/",
   },
   {
     title: "Yakiita hantverk",
